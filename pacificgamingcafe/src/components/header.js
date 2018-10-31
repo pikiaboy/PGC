@@ -1,27 +1,35 @@
 import React, { Component } from "react";
 import { Navbar, NavItem, NavDropdown, MenuItem, Nav } from "react-bootstrap";
+//import Clock from "./clock";
 
 class Header extends Component {
   render() {
     return (
       <header>
         <Navbar fluid={true} fixedTop={true} inverse={true}>
-          <div className="logo">
-            <img
-              class="img-responsive"
-              margin={100}
-              padding="100px"
-              width={400}
-              padding={100}
-              src={require("/Users/ScottSimenel/Documents/GitHub/PGC/pacificgamingcafe/src/components/headerComponent/PGC logonew.png")}
-            />
-          </div>
           <Navbar.Header>
+            <div className="logo">
+              <img
+                class="img-responsive"
+                margin={100}
+                padding="100px"
+                width={400}
+                padding={100}
+                src={require("/Users/ScottSimenel/Documents/GitHub/PGC/pacificgamingcafe/src/PGC logonew.png")}
+              />
+            </div>
+          </Navbar.Header>
+          <Navbar.Header
+            style={{ marginBottom: 0, marginTop: 35, marginLeft: 30 }}
+          >
             <Navbar.Brand>
               <a href="#home">Home</a>
             </Navbar.Brand>
           </Navbar.Header>
-          <Nav>
+          <Nav
+            style={{ fontSize: 18, marginBottom: 0, marginTop: 35 }}
+            stacked={false}
+          >
             <NavItem eventKey={1} href="#">
               Info
             </NavItem>
@@ -36,8 +44,8 @@ class Header extends Component {
               <MenuItem eventKey={3.4}>Separated link</MenuItem>
             </NavDropdown>
           </Nav>
+          {/*<Clock />*/}
         </Navbar>
-        ;
       </header>
     );
   }

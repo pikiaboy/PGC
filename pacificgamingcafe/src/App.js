@@ -1,17 +1,36 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import "./components/pagesComponent/homePage";
-import Header from "./components/headerComponent/header";
-import Homepage from "./components/pagesComponent/homePage";
-import Footer from "./components/footerComponent/footer";
+import MainCarousel from "./components/mainCarousel";
+import Header from "./components/header";
+import Footer from "./components/footer";
+import Prices from "./components/prices";
+import Hours from "./components/hours";
+import { Grid, Row, Col } from "react-bootstrap";
+//import BackendView from "./components/backendView";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Header />
-        <Homepage />
+        <Grid>
+          <Row>
+            <Col xs={14} md={12} mdOffset={0}>
+              <MainCarousel />
+            </Col>
+          </Row>
+        </Grid>
+        <Grid>
+          <Row>
+            <Col xs={9} md={6}>
+              <Prices />
+            </Col>
+            <Col xs={9} md={6}>
+              <Hours />
+            </Col>
+          </Row>
+        </Grid>
         <Footer />
       </div>
     );
