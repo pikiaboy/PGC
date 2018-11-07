@@ -14,7 +14,7 @@ class Header extends Component {
                 margin={100}
                 padding="100px"
                 width={400}
-                src={require("../PGC_logonew.png")}
+                src={require("../PGC_logoneww.png")}
               />
             </div>
           </Navbar.Header>
@@ -29,11 +29,8 @@ class Header extends Component {
             style={{ fontSize: 18, marginBottom: 0, marginTop: 35 }}
             stacked={false}
           >
-            <NavItem eventKey={1} href="#">
-              Info
-            </NavItem>
             <NavItem eventKey={2} href="#">
-              Reservation
+              Reservations
             </NavItem>
             <NavDropdown eventKey={3} title="More Info" id="basic-nav-dropdown">
               <MenuItem eventKey={3.1}>Consoles</MenuItem>
