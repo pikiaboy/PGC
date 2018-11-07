@@ -1,25 +1,36 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import MainCarousel from "./components/mainCarousel";
+import Header from "./components/header";
+import Footer from "./components/footer";
+import Prices from "./components/prices";
+import Hours from "./components/hours";
+import { Grid, Row, Col } from "react-bootstrap";
+//import BackendView from "./components/backendView";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Header />
+        <Grid>
+          <Row>
+            <Col xs={14} md={12} mdOffset={0}>
+              <MainCarousel />
+            </Col>
+          </Row>
+        </Grid>
+        <Grid>
+          <Row>
+            <Col xs={9} md={6}>
+              <Prices />
+            </Col>
+            <Col xs={9} md={6}>
+              <Hours />
+            </Col>
+          </Row>
+        </Grid>
+        <Footer />
       </div>
     );
   }
