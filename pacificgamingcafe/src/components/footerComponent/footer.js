@@ -1,0 +1,15 @@
+import React, { Component } from 'react';
+
+class Footer extends Component {
+  render() {
+    return (
+        <footer>
+            Contact Info: <br />
+            803 Pacific Ave, Santa Cruz, CA 95060 <br />
+            Phone: (415) 910-0592 <br />
+        </footer>
+    );
+  }
+}
+
+export default Footer;
