@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import {Navbar, NavItem, NavDropdown, MenuItem, Nav} from 'react-bootstrap';
+import {Navbar, Grid, NavItem, NavDropdown, MenuItem, Nav} from 'react-bootstrap';
 
 class Header extends Component {
   render() {
     return (
       <header >
 
-<Navbar fluid={true}fixedTop={true}inverse ={true}>
+<Navbar fluid={true} fixedTop={true} inverse ={true}>
 <div className="logo" >
             <img class="img-responsive" margin={100} padding="100px" width ={400} padding = {100} src= {require("/Users/alysiatran/Documents/PGC/pacificgamingcafe/src/components/headerComponent/PGC logonew.png")}></img> 
           </div>
@@ -15,7 +15,7 @@ class Header extends Component {
       <a href="#home">Home</a>
     </Navbar.Brand>
   </Navbar.Header>
-  <Nav>
+  <Nav pullRight>
     <NavItem eventKey={1} href="#">
       Info
     </NavItem>

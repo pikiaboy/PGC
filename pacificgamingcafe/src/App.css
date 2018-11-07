@@ -18,6 +18,12 @@
   color: white;
 }
 
+header {
+  display: block;
+  width: 100%;
+  background: black;
+}
+
 .App-link {
   color: #61dafb;
 }
