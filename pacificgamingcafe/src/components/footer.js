@@ -1,9 +1,5 @@
 import React, { Component } from "react";
 
-const whiteText = {
-  color: "white"
-};
-
 class Footer extends Component {
   render() {
     return (

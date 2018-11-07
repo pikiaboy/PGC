@@ -1,18 +1,18 @@
 import React, { Component } from "react";
 import { Panel } from "react-bootstrap";
 
-const priceStyle = {
-  color: "white"
-};
+// const priceStyle = {
+//   color: "white"
+// };
 
-var bgColors = {
-  Default: "#FFFFFF",
-  Blue: "#00B1E1",
-  Cyan: "#37BC9B",
-  Green: "#8CC152",
-  Red: "#E9573F",
-  Yellow: "#F6BB42"
-};
+// var bgColors = {
+//   Default: "#FFFFFF",
+//   Blue: "#00B1E1",
+//   Cyan: "#37BC9B",
+//   Green: "#8CC152",
+//   Red: "#E9573F",
+//   Yellow: "#F6BB42"
+// };
 
 class Prices extends Component {
   render() {

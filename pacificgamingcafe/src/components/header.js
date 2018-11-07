@@ -14,8 +14,7 @@ class Header extends Component {
                 margin={100}
                 padding="100px"
                 width={400}
-                padding={100}
-                src={require("/Users/ScottSimenel/Documents/GitHub/PGC/pacificgamingcafe/src/PGC logonew.png")}
+                src={require("../PGC_logonew.png")}
               />
             </div>
           </Navbar.Header>

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Table } from "react-bootstrap";
 
-const whiteText = {
-  color: "white"
-};
+// const whiteText = {
+//   color: "white"
+// };
 
 class Hours extends Component {
   render() {
