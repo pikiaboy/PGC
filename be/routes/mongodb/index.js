@@ -1,4 +1,6 @@
 const mongodb = require('express').Router();
+const checkParams = require('../../libraries/checkParams').checkParams;
+const response = require('../response');
 
 //mount the API here.
 //const grabDB = require('./grabDB.js');
@@ -11,22 +13,30 @@ const updatePending = require('./updatePending');
 
 
 mongodb.get('/inDB', (req, res) => {
-    res.status(200).json({
-      message: 'in db!'
-    });
-  });
+  
+  response.send(200, "You're in the DB", res);
+
+});
 
 
-mongodb.get('/craeteEntry', (req, res) =>{
-  res.status(200).json({
-    message: "Yeah, its doing something"
-  });
+mongodb.get('/craeteEntry/:id', (req, res) => {
+
+  let param = req.params;
+
+  if (checkParams(param)) {
+    response.send(200, "You are about to create an entry", res);
+  } else {
+    response.send(401, "Unathorized Access", res);
+  }
+
 })
 
-mongodb.get('/updatePending', (req, res) =>{
-  res.status(200).json({
-    message: "Defintely doing something"
-  });
+mongodb.get('/updatePending', (req, res) => {
+  if (checkParams(param)) {
+    response.send(200, "You made it!", res);
+  } else {
+    response.send(401, "Unathorized Access", res);
+  }
 })
 
 
