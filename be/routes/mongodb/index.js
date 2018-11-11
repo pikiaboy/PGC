@@ -13,13 +13,11 @@ const updatePending = require('./updatePending');
 
 
 mongodb.get('/inDB', (req, res) => {
-  
   response.send(200, "You're in the DB", res);
-
 });
 
 
-mongodb.get('/craeteEntry/:id', (req, res) => {
+mongodb.get('/createEntry/:id', (req, res) => {
 
   let param = req.params;
 
