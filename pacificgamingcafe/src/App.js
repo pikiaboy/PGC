@@ -5,13 +5,16 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import Prices from "./components/prices";
 import Hours from "./components/hours";
-import { Grid, Row, Col } from "react-bootstrap";
+import { Grid, Row, Col, Button } from "react-bootstrap";
+import { colorStyle } from "./components/style";
+import ThemeButton from "./components/themeButton";
+
 //import BackendView from "./components/backendView";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="App" style={colorStyle}>
         <Header />
         <Grid>
           <Row>
@@ -30,6 +33,7 @@ class App extends Component {
             </Col>
           </Row>
         </Grid>
+        {/*<BackendView />*/}
         <Footer />
       </div>
     );
