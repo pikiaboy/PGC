@@ -5,7 +5,11 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import Prices from "./components/prices";
 import Hours from "./components/hours";
+import Calendar from "./components/calendar";
+import TimePicker from './components/timepicker';
+import Reservations from './Reservations';
 import { Grid, Row, Col } from "react-bootstrap";
+import {Router, Route} from "react-router-dom";
 //import BackendView from "./components/backendView";
 
 class App extends Component {
@@ -27,6 +31,14 @@ class App extends Component {
             </Col>
             <Col xs={9} md={6}>
               <Hours />
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={9} md={6}>
+              <Calendar />
+            </Col>
+            <Col xs={9} md={6}>
+              <TimePicker />
             </Col>
           </Row>
         </Grid>
