@@ -9,7 +9,6 @@ import Calendar from "./components/calendar";
 import TimePicker from './components/timepicker';
 import Reservations from './Reservations';
 import { Grid, Row, Col } from "react-bootstrap";
-import {Router, Route} from "react-router-dom";
 //import BackendView from "./components/backendView";
 
 class App extends Component {

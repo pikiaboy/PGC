@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { Navbar, NavItem, NavDropdown, MenuItem, Nav } from "react-bootstrap";
 import { Grid, Row, Col } from "react-bootstrap";
-import {Link} from "react-router-dom";
 import {Reservations} from "../Reservations.js";
-import {Router, Route} from "react-router";
 //import Clock from "./clock";
 
 class Header extends Component {
@@ -51,7 +49,7 @@ class Header extends Component {
             margin={100}
             padding="100px"
             width={150}
-                src={require("/Users/alysiatran/Documents/PGC/pacificgamingcafe/src/components/headerComponent/yelp-logo.png")}
+                src={require("./images/yelp-logo.png")}
               />
             </a>
             </Navbar.Header>
