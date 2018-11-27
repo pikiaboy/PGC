@@ -36,4 +36,6 @@ mongodb.get("/updatePending", (req, res) => {
 
 mongodb.post("/createUserEntry", createUserEntry);
 
+mongodb.post("/updateUserEntry", updateUserEntry);
+
 module.exports = mongodb;

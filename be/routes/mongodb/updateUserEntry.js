@@ -1,28 +1,38 @@
-module.exports = function(req) {
+module.exports = function (req, res) {
   const MongoClient = require("mongodb").MongoClient;
-  const assert = require("assert");
 
-  var user = {
-    UID: req.body.UID,
+  let user = {
     email: req.body.email,
-    confirmed: req.body.confirmed
+    UID: req.body.UID,
+    confirmed: req.body.confirmed,
+    active: req.body.active
   };
 
-  MongoClient.connect(
-    process.env.MONOGO_URL,
-    function(err, client) {
-      assert.equal(null, err);
-      var db = client.db("pacificgamingcafe");
+  if (user.email == null || user.UID == null || user.confirmed == null || user.active == null) {
+    res.status(400).json({
+      message: "Bad request"
+    });
+    return;
+  }
 
-      db.collection("Reservations").updateOne(
-        { UID: user.UID },
-        { $set: user },
-        function(err, res) {
-          assert.equal(null, err);
-          console.log("User entry successfully updated");
-          client.close();
-        }
-      );
+  MongoClient.connect(process.env.MONOGO_URL, function (err, client) {
+    if (err) {
+      res.status(500).json({
+        message: "Cannot connect to server"
+      });
+      return;
     }
-  );
+    var db = client.db("pacificgamingcafe");
+
+    db.collection("reservations").updateOne({ UID: user.UID }, { $set: user }, function (err, res) {
+      if (err) {
+        res.status(400).json({
+          message: "Bad request"
+        });
+        return;
+      }
+      console.log("User entry successfully updated");
+      client.close();
+    });
+  });
 };
