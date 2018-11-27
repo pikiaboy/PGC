@@ -15,24 +15,32 @@ module.exports = function (req, res) {
 		return;
 	}
 
-	MongoClient.connect(process.env.MONOGO_URL, function (err, client) {
+	MongoClient.connect(process.env.MONOGO_URL, { useNewUrlParser: true }, function (err, client) {
 		if (err) {
 			res.status(500).json({
 				message: "Cannot connect to server"
 			});
 			return;
 		}
-		var db = client.db("pacificgamingcafe");
+		let db = client.db("pacificgamingcafe");
 
-		db.collection("reservations").insertOne(user, function (err, res) {
-			if (err) {
+		let dupDoc = db.collection("reservations").find({ UID: user.UID }).toArray(function (err, cursor) {
+			if (err || cursor.length != 0) {
 				res.status(400).json({
-					message: "Bad request"
+					message: "Bad request: Duplicate entry"
 				});
-				return;
+			} else {
+				db.collection("reservations").insertOne(user, function (err, res) {
+					if (err) {
+						res.status(400).json({
+							message: "Bad request"
+						});
+						return;
+					}
+					console.log("User entry successfully created");
+					client.close();
+				});
 			}
-			console.log("User entry successfully created");
-			client.close();
 		});
 	});
 };
