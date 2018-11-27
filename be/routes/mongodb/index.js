@@ -44,7 +44,7 @@ mongodb.get('/updatePending', (req, res) => {
 
 mongodb.post('/login', loginFlow);
 
-mongodb.post('/fuckoff', (req,res) => {
+mongodb.post('/verify', (req,res) => {
    if (verifyToken(req,res)){
      res.set(200).json({
        "message": "your good"
