@@ -1,5 +1,10 @@
 import React, { Component } from "react";
 import { Navbar, NavItem, NavDropdown, MenuItem, Nav } from "react-bootstrap";
+<<<<<<< HEAD
+=======
+import { Grid, Row, Col } from "react-bootstrap";
+import {Reservations} from "../Reservations.js";
+>>>>>>> 588710f5f57efc54e6a71ded5b1b1131ec066873
 //import Clock from "./clock";
 
 class Header extends Component {
@@ -43,8 +48,16 @@ class Header extends Component {
           <div style={{ marginBottom: 0, marginTop: 20, marginLeft: 300 }}>
           <a href="https://www.yelp.com/biz/pacific-gaming-cafe-santa-cruz" target="_blank">
             <img
+<<<<<<< HEAD
             class="img-responsive center-block" width={100} align = "right" 
             src={require("./images/yelp-logo.png")}/>
+=======
+            margin={100}
+            padding="100px"
+            width={150}
+                src={require("./images/yelp-logo.png")}
+              />
+>>>>>>> 588710f5f57efc54e6a71ded5b1b1131ec066873
             </a>
             </div>
         </Navbar>
