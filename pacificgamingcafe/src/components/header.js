@@ -1,13 +1,7 @@
 import React, { Component } from "react";
-import {
-  Navbar,
-  NavItem,
-  NavDropdown,
-  MenuItem,
-  Nav,
-  Button
-} from "react-bootstrap";
-import ThemeButton from "./themeButton";
+import { Navbar, NavItem, NavDropdown, MenuItem, Nav } from "react-bootstrap";
+
+//import Clock from "./clock";
 
 class Header extends Component {
   render() {
@@ -20,38 +14,38 @@ class Header extends Component {
                 class="img-responsive"
                 margin={100}
                 padding="100px"
-                width={400}
-                padding={100}
-                src={require("../PGC_logonew.png")}
-              />
+                width={300}
+                src={require("./images/pgclogo1.png")}
+                alt="pgclogo"/>
             </div>
           </Navbar.Header>
           <Navbar.Header
-            style={{ marginBottom: 0, marginTop: 35, marginLeft: 30 }}
-          >
+            style={{ marginBottom: 0, marginTop: 35, marginLeft: 30 }}>
             <Navbar.Brand>
               <a href="#home">Home</a>
             </Navbar.Brand>
           </Navbar.Header>
           <Nav
-            style={{ fontSize: 18, marginBottom: 0, marginTop: 35 }}
-            stacked={false}
-          >
-            <NavItem eventKey={1} href="#">
-              Info
+            style={{ fontSize: 18, marginBottom:0, marginTop: 35 }} stacked={false}>
+            <NavItem eventKey={2} href="/Reservations">
+              Reservations
             </NavItem>
-            <NavItem eventKey={2} href="#">
-              Reservation
-            </NavItem>
-            <NavDropdown eventKey={3} title="More Info" id="basic-nav-dropdown">
+            <NavDropdown eventKey={3} title="Info" id="basic-nav-dropdown">
               <MenuItem eventKey={3.1}>Consoles</MenuItem>
               <MenuItem eventKey={3.2}>Games</MenuItem>
               <MenuItem eventKey={3.3}>Computers</MenuItem>
               <MenuItem divider />
-              <MenuItem eventKey={3.4}>Separated link</MenuItem>
+              <MenuItem eventKey={3.4}>Admin link</MenuItem>
             </NavDropdown>
           </Nav>
-          <ThemeButton />
+          {/*<Clock />*/}
+          <div style={{ marginBottom: 0, marginTop: 20, marginLeft: 300 }}>
+          <a href="https://www.yelp.com/biz/pacific-gaming-cafe-santa-cruz" target="_blank" rel="noopener noreferrer">
+            <img
+            class="img-responsive center-block" width={100} align = "right" 
+            src={require("./images/yelp-logo.png")} alt="yelp logo"/>
+            </a>
+            </div>
         </Navbar>
       </header>
     );
