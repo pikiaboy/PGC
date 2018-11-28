@@ -1,17 +1,14 @@
 import React, { Component } from "react";
 import { Table } from "react-bootstrap";
-
-// const whiteText = {
-//   color: "white"
-// };
+import { colorStyle } from "./style.js";
 
 class Hours extends Component {
   render() {
     return (
       <div>
-        <h1 /*style={whiteText}*/>Hours</h1>
-        <Table responsive>
-          <tbody /*style={whiteText}*/>
+        <h1 style={colorStyle}>Hours</h1>
+        <Table responsive style={colorStyle}>
+          <tbody style={{ fontSize: 16 }}>
             <tr>
               <td>Monday</td>
               <td>2:00 pm - 11:00 pm</td>

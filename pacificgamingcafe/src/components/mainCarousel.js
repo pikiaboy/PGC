@@ -4,16 +4,16 @@ import { Carousel } from "react-bootstrap";
 class MainCarousel extends Component {
   render() {
     let style = {
-      width: '100%',
-      height: 500
-    }
+      width: "100%",
+      height: 800
+    };
 
     return (
       <Carousel>
         <Carousel.Item>
           <img
             class="img-responsive center-block"
-            style = {style}
+            style={style}
             width={1200}
             height={900}
             alt="1200x900"
@@ -27,7 +27,7 @@ class MainCarousel extends Component {
         <Carousel.Item>
           <img
             class="img-responsive center-block"
-            style = {style}
+            style={style}
             width={1200}
             height={900}
             alt="1200x900"
@@ -41,7 +41,7 @@ class MainCarousel extends Component {
         <Carousel.Item>
           <img
             class="img-responsive center-block"
-            style = {style}
+            style={style}
             width={1200}
             height={900}
             alt="1200x500"

@@ -1,6 +1,13 @@
 import React, { Component } from "react";
-import { Navbar, NavItem, NavDropdown, MenuItem, Nav } from "react-bootstrap";
-//import Clock from "./clock";
+import {
+  Navbar,
+  NavItem,
+  NavDropdown,
+  MenuItem,
+  Nav,
+  Button
+} from "react-bootstrap";
+import ThemeButton from "./themeButton";
 
 class Header extends Component {
   render() {
@@ -14,6 +21,7 @@ class Header extends Component {
                 margin={100}
                 padding="100px"
                 width={400}
+                padding={100}
                 src={require("../PGC_logonew.png")}
               />
             </div>
@@ -43,7 +51,7 @@ class Header extends Component {
               <MenuItem eventKey={3.4}>Separated link</MenuItem>
             </NavDropdown>
           </Nav>
-          {/*<Clock />*/}
+          <ThemeButton />
         </Navbar>
       </header>
     );

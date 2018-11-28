@@ -10,7 +10,7 @@ const response = require('../response');
 const createEntry = require('./createEntry');
 const updatePending = require('./updatePending');
 const loginFlow = require('./loginFlow');
-
+const updateUserEntry = require("./updateUserEntry");
 
 //Bind them here
 // mongodb.get('/grabDB', grabDB);
@@ -39,6 +39,8 @@ mongodb.get('/updatePending', (req, res) => {
   } else {
     response.send(401, "Unathorized Access", res);
   }
+});
+
 })
 
 
