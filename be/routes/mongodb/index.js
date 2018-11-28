@@ -10,6 +10,7 @@ const response = require('../response');
 const createEntry = require('./createEntry');
 const updatePending = require('./updatePending');
 const loginFlow = require('./loginFlow');
+const createUserEntry = require('./createUserEntry')
 const updateUserEntry = require("./updateUserEntry");
 
 //Bind them here
@@ -41,8 +42,9 @@ mongodb.get('/updatePending', (req, res) => {
   }
 });
 
-})
 
+mongodb.post('/createUserEntry', createUserEntry);
+mongodb.post('/updateUserEntry', updateUserEntry);
 
 mongodb.post('/login', loginFlow);
 

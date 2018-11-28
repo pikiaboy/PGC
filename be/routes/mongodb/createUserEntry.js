@@ -8,8 +8,10 @@ module.exports = function (req, res) {
 		active: req.body.active
 	};
 
+	let response = res;
+
 	if (user.email == null || user.UID == null || user.confirmed == null || user.active == null) {
-		res.status(400).json({
+		response.status(400).json({
 			message: "Bad request"
 		});
 		return;
@@ -17,7 +19,7 @@ module.exports = function (req, res) {
 
 	MongoClient.connect(process.env.MONOGO_URL, { useNewUrlParser: true }, function (err, client) {
 		if (err) {
-			res.status(500).json({
+			response.status(500).json({
 				message: "Cannot connect to server"
 			});
 			return;
@@ -26,18 +28,22 @@ module.exports = function (req, res) {
 
 		let dupDoc = db.collection("reservations").find({ UID: user.UID }).toArray(function (err, cursor) {
 			if (err || cursor.length != 0) {
-				res.status(400).json({
+				response.status(400).json({
 					message: "Bad request: Duplicate entry"
 				});
 			} else {
 				db.collection("reservations").insertOne(user, function (err, res) {
 					if (err) {
-						res.status(400).json({
+						response.status(400).json({
 							message: "Bad request"
 						});
 						return;
 					}
 					console.log("User entry successfully created");
+					response.status(200).json({
+						"message": "User Entry created",
+						"stats": "ok"
+					})
 					client.close();
 				});
 			}

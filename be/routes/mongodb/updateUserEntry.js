@@ -8,6 +8,8 @@ module.exports = function (req, res) {
     active: req.body.active
   };
 
+  let response = res;
+
   if (user.email == null || user.UID == null || user.confirmed == null || user.active == null) {
     res.status(400).json({
       message: "Bad request"
@@ -17,7 +19,7 @@ module.exports = function (req, res) {
 
   MongoClient.connect(process.env.MONOGO_URL, function (err, client) {
     if (err) {
-      res.status(500).json({
+      response.status(500).json({
         message: "Cannot connect to server"
       });
       return;
@@ -26,12 +28,16 @@ module.exports = function (req, res) {
 
     db.collection("reservations").updateOne({ UID: user.UID }, { $set: user }, function (err, res) {
       if (err) {
-        res.status(400).json({
+        response.status(400).json({
           message: "Bad request"
         });
         return;
       }
       console.log("User entry successfully updated");
+      response.status(200).json({
+        "message": "User Entry updated",
+        "stats": "ok"
+      })
       client.close();
     });
   });
