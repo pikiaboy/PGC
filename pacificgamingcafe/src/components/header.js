@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { Navbar, NavItem, NavDropdown, MenuItem, Nav } from "react-bootstrap";
-import { Grid, Row, Col } from "react-bootstrap";
-import {Reservations} from "../Reservations.js";
 
 //import Clock from "./clock";
 
@@ -17,20 +15,18 @@ class Header extends Component {
                 margin={100}
                 padding="100px"
                 width={300}
-                src={require("./images/pgclogo1.png")}/>
+                src={require("./images/pgclogo1.png")}
+                alt="pgclogo"/>
             </div>
           </Navbar.Header>
           <Navbar.Header
-            style={{ marginBottom: 0, marginTop: 35, marginLeft: 30 }}
-          >
+            style={{ marginBottom: 0, marginTop: 35, marginLeft: 30 }}>
             <Navbar.Brand>
               <a href="#home">Home</a>
             </Navbar.Brand>
           </Navbar.Header>
           <Nav
-            style={{ fontSize: 18, marginBottom:0, marginTop: 35 }}
-            stacked={false}
-          >
+            style={{ fontSize: 18, marginBottom:0, marginTop: 35 }} stacked={false}>
             <NavItem eventKey={2} href="/Reservations">
               Reservations
             </NavItem>
@@ -44,10 +40,10 @@ class Header extends Component {
           </Nav>
           {/*<Clock />*/}
           <div style={{ marginBottom: 0, marginTop: 20, marginLeft: 300 }}>
-          <a href="https://www.yelp.com/biz/pacific-gaming-cafe-santa-cruz" target="_blank">
+          <a href="https://www.yelp.com/biz/pacific-gaming-cafe-santa-cruz" target="_blank" rel="noopener noreferrer">
             <img
             class="img-responsive center-block" width={100} align = "right" 
-            src={require("./images/yelp-logo.png")}/>
+            src={require("./images/yelp-logo.png")} alt="yelp logo"/>
             </a>
             </div>
         </Navbar>
