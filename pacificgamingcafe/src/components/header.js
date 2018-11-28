@@ -1,9 +1,5 @@
 import React, { Component } from "react";
 import { Navbar, NavItem, NavDropdown, MenuItem, Nav } from "react-bootstrap";
-import { Grid, Row, Col } from "react-bootstrap";
-import {Link} from "react-router-dom";
-import {Reservations} from "../Reservations.js";
-import {Router, Route} from "react-router";
 //import Clock from "./clock";
 
 class Header extends Component {
@@ -17,9 +13,8 @@ class Header extends Component {
                 class="img-responsive"
                 margin={100}
                 padding="100px"
-                width={400}
-                src={require("../PGC_logoneww.png")}
-              />
+                width={300}
+                src={require("./images/pgclogo1.png")}/>
             </div>
           </Navbar.Header>
           <Navbar.Header
@@ -45,16 +40,13 @@ class Header extends Component {
             </NavDropdown>
           </Nav>
           {/*<Clock />*/}
-          <Navbar.Header>
+          <div style={{ marginBottom: 0, marginTop: 20, marginLeft: 300 }}>
           <a href="https://www.yelp.com/biz/pacific-gaming-cafe-santa-cruz" target="_blank">
             <img
-            margin={100}
-            padding="100px"
-            width={150}
-                src={require("/Users/alysiatran/Documents/PGC/pacificgamingcafe/src/components/headerComponent/yelp-logo.png")}
-              />
+            class="img-responsive center-block" width={100} align = "right" 
+            src={require("./images/yelp-logo.png")}/>
             </a>
-            </Navbar.Header>
+            </div>
         </Navbar>
       </header>
     );
